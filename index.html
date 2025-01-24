@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .submit-button {
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        .post {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        .post h2 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+
+        .post a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .post a:hover {
+            text-decoration: underline;
+        }
+
+        .post .meta {
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Commet</h1>
+        <a href="https://github.com/s4d-w1z4rd/commet/pulls" class="submit-button">Submit</a>
+    </div>
+    <div id="posts"></div>
+
+    <script>
+        const posts = [
+            {
+                "title": "Understanding gRPC, OpenAPI and REST and when to use them in API design",
+                "link": "https://cloud.google.com",
+                "date": "2025-01-01",
+                "username": "api_wizard"
+            },
+            {
+                "title": "Where is London's most central sheep?",
+                "link": "https://diamondgeezer.blogspot.com",
+                "date": "2025-01-05",
+                "username": "map_geek"
+            },
+            {
+                "title": "Master the Art of the Product Manager 'No'",
+                "link": "https://letsnotdothat.com",
+                "date": "2025-01-10",
+                "username": "pm_guru"
+            },
+            {
+                "title": "Lossless Compression of Vector IDs for Approximate Nearest Neighbor Search",
+                "link": "https://arxiv.org",
+                "date": "2025-01-12",
+                "username": "compression_fan"
+            },
+            {
+                "title": "F-Droid's Progress and What's Coming in 2025",
+                "link": "https://f-droid.org",
+                "date": "2025-01-15",
+                "username": "oss_dev"
+            },
+            {
+                "title": "Tailwind CSS v4.0",
+                "link": "https://tailwindcss.com",
+                "date": "2025-01-18",
+                "username": "css_master"
+            },
+            {
+                "title": "The Most Detailed Map of US Waters That You've Ever Seen (2023)",
+                "link": "https://esri.com",
+                "date": "2025-01-20",
+                "username": "geo_nerd"
+            },
+            {
+                "title": "Most Influential Papers in Computer Science History",
+                "link": "https://terriblesoftware.org",
+                "date": "2025-01-22",
+                "username": "cs_history_buff"
+            },
+            {
+                "title": "Tech takes the Pareto principle too far",
+                "link": "https://bobbylox.com",
+                "date": "2025-01-23",
+                "username": "tech_philosopher"
+            },
+            {
+                "title": "Hacking Subaru: Tracking and Controlling Cars via the Starlink Admin Panel",
+                "link": "https://samcurry.net",
+                "date": "2025-01-24",
+                "username": "cybersecurity_hacker"
+            },
+            {
+                "title": "A Proper x86 Assembler in Haskell Using the Escardó-Oliva Functional",
+                "link": "https://vmchale.com",
+                "date": "2025-01-25",
+                "username": "functional_coder"
+            },
+            {
+                "title": "Edge TTS",
+                "link": "https://github.com/rany2",
+                "date": "2025-01-26",
+                "username": "tts_dev"
+            },
+            {
+                "title": "Minecraft with object impermanence",
+                "link": "https://aiweirdness.com",
+                "date": "2025-01-27",
+                "username": "game_experimenter"
+            },
+            {
+                "title": "Taking a Look at Compression Algorithms",
+                "link": "https://cefboud.github.io",
+                "date": "2025-01-28",
+                "username": "data_packer"
+            },
+            {
+                "title": "Show HN: I organized Bluesky feeds by categories and growth rankings",
+                "link": "https://bskyinfo.com",
+                "date": "2025-01-29",
+                "username": "social_networker"
+            },
+            {
+                "title": "Thank HN: My bootstrapped startup got acquired today",
+                "link": "",
+                "date": "2025-01-30",
+                "username": "startup_founder"
+            },
+            {
+                "title": "Trae: An AI-powered IDE by ByteDance",
+                "link": "https://trae.ai",
+                "date": "2025-02-01",
+                "username": "bytecode_ai"
+            },
+            {
+                "title": "Tomatoes roaming the fields and canaries in the coalmine",
+                "link": "https://deevybee.blogspot.com",
+                "date": "2025-02-03",
+                "username": "field_observer"
+            },
+            {
+                "title": "The British Micro Behemoth",
+                "link": "https://abortretry.fail",
+                "date": "2025-02-05",
+                "username": "micro_computing"
+            },
+            {
+                "title": "Foundations of Large Language Models",
+                "link": "https://arxiv.org",
+                "date": "2025-02-06",
+                "username": "ml_foundations"
+            },
+            {
+                "title": "How shutdown Bay Area tech companies ditch their fancy gear fast",
+                "link": "https://sfgate.com",
+                "date": "2025-02-07",
+                "username": "tech_auctioneer"
+            },
+            {
+                "title": "Psychedelic Graphics 0: Introduction",
+                "link": "https://benpence.com",
+                "date": "2025-02-08",
+                "username": "graphics_dev"
+            },
+            {
+                "title": "RealtimeSanitizer for Rust",
+                "link": "https://steck.tech",
+                "date": "2025-02-09",
+                "username": "rust_ace"
+            },
+            {
+                "title": "Bunster: Compile bash scripts to self-contained executables",
+                "link": "https://github.com/yassinebenaid",
+                "date": "2025-02-10",
+                "username": "bash_scripter"
+            },
+            {
+                "title": "Introducing Operator",
+                "link": "https://openai.com",
+                "date": "2025-02-11",
+                "username": "ai_operator"
+            },
+            {
+                "title": "Llama.vim – Local LLM-assisted text completion",
+                "link": "https://github.com/ggml-org",
+                "date": "2025-02-12",
+                "username": "vim_llm"
+            },
+            {
+                "title": "Turn any bicycle electric",
+                "link": "https://dhruvvidyut.co.in",
+                "date": "2025-02-13",
+                "username": "bike_hacker"
+            },
+            {
+                "title": "Bun 1.2 Is Released",
+                "link": "https://bun.sh",
+                "date": "2025-02-14",
+                "username": "bun_dev"
+            },
+            {
+                "title": "Show HN: I built an active community of trans people online",
+                "link": "https://t4t.social",
+                "date": "2025-02-15",
+                "username": "community_builder"
+            },
+            {
+                "title": "Working with Files Is Hard (2019)",
+                "link": "https://danluu.com",
+                "date": "2025-02-16",
+                "username": "file_skeptic"
+            }
+        ]
+
+
+
+        // Function to Display Posts
+        const postsContainer = document.getElementById('posts');
+
+        posts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.classList.add('post');
+            postElement.innerHTML = `
+        <h2><a href="${post.link}" target="_blank">${post.title}</a></h2>
+        <div class="meta">Posted by ${post.username} on ${post.date}</div>
+      `;
+            postsContainer.appendChild(postElement);
+        });
+    </script>
+</body>
+
+</html>
