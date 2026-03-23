@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "Commet – 現在のURLのRedditとHacker Newsの投稿を検索" },
+  "extDesc": {
+    "message": "現在のURLのRedditとHacker Newsの投稿を検索し、拡張機能のポップアップで表示します。"
+  }
+}

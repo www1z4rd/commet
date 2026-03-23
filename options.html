@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Commet Options</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="options-wrap">
+      <div class="options-group">
+        <label class="option-label">
+          <input type="checkbox" id="hidePosts" />
+          Hide posts with 0 comments
+        </label>
+        <label class="option-label">
+          <input type="checkbox" id="noPopupCheck" />
+          Only check for posts when popup icon is clicked
+        </label>
+      </div>
+      <label class="option-label" for="theme">Extension Theme:</label>
+      <select id="theme">
+        <option value="default">Default</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>

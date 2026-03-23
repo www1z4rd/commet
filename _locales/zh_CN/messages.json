@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "Commet – 查找当前网址的 Reddit 和 Hacker News 帖子" },
+  "extDesc": {
+    "message": "查找当前网址的 Reddit 和 Hacker News 帖子，并在扩展程序弹窗中查看。"
+  }
+}

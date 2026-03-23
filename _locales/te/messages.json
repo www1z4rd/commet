@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "Commet – Works with Reddit Enhancement Suite, RES, Old Reddit Redirect" },
+  "extDesc": {
+    "message": "Find Reddit & Hacker News posts for the current URL and view them in the extension popup."
+  }
+}

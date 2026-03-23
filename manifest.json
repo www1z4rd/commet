@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "__MSG_extName__",
+  "short_name": "Commet",
+  "description": "__MSG_extDesc__",
+  "author": "__MSG_extName__",
+  "default_locale": "en",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "permissions": ["tabs", "storage", "webNavigation"],
+  "host_permissions": ["*://*.reddit.com/*", "*://hn.algolia.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}

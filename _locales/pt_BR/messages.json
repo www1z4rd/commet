@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "Commet – Encontrar posts do Reddit e Hacker News para o URL atual" },
+  "extDesc": {
+    "message": "Encontre posts do Reddit e Hacker News para o URL atual e visualize-os no pop-up da extensão."
+  }
+}

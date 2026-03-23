@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "Commet – Поиск постов Reddit и Hacker News для текущего URL" },
+  "extDesc": {
+    "message": "Находите посты Reddit и Hacker News для текущего URL и просматривайте их во всплывающем окне расширения."
+  }
+}

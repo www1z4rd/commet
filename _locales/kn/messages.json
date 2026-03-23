@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "Commet – Works with Imagus, hover zoom, Modern for Hacker News" },
+  "extDesc": {
+    "message": "Find Reddit & Hacker News posts for the current URL and view them in the extension popup."
+  }
+}
